@@ -18,7 +18,6 @@ namespace UserReader.Services
 
         public virtual List<UserInfo> FromFile()
         {
-            throw new NotImplementedException();
             return ReadUsers().Select(u => new UserInfo()
             {
                 Name = u.Name,
