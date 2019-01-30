@@ -22,6 +22,7 @@ namespace AbstractFactory
             };
             users.Add(user);
             File.WriteAllText(fileName, JsonConvert.SerializeObject(users));
+            //It also work
             //using (StreamWriter file = new StreamWriter(fileName))
             //{
             //    JsonSerializer serializer = new JsonSerializer();

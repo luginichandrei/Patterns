@@ -14,9 +14,9 @@ namespace UserReader.Services
             this.analyticStrategy = analyticStrategy;
         }
 
-        public List<CityInfo> Import() => new OrdersReader().LoadFile();
+        public virtual List<CityInfo> Import() => new OrdersReader().LoadFile();
 
-        public void PrintAnalitics()
+        public virtual void PrintAnalitics()
         {
             var result = analyticStrategy.Analyze(Import());
             Console.WriteLine(result);

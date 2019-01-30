@@ -16,7 +16,7 @@ namespace UserReader
             om.PrintAnalitics();
             om.analyticStrategy = new AverageAnalyticStrategy();
             om.PrintAnalitics();
-
+            //AbstractFactoryInin
             var manageFile = new AbstractFactory.UserManager(new FileFactory());
             var manageJson = new AbstractFactory.UserManager(new JsonFactory());
             manageFile.Add("Steve", 1, "NewYork");

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AbstractFactory
 {
@@ -27,9 +28,12 @@ namespace AbstractFactory
             var result = factory.GetWriter().Add(name, age, city);
         }
 
-        public void Delete(Guid id)
+        public virtual User Delete(Guid id)
         {
             var result = factory.GetWriter().Delete(id);
+            return result;
         }
+
+        public virtual List<User> ByAge(int age) => factory.GetReader().All().Where(x => x.Age == age).ToList();
     }
 }

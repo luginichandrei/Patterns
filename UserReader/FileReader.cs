@@ -9,7 +9,7 @@ namespace AbstractFactory
     {
         private string fileName = @"C:\DataInfo.txt";
 
-        public List<User> All()
+        public virtual List<User> All()
         {
             var users = new List<User>();
             using (StreamReader reader = new StreamReader(fileName))

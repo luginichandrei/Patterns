@@ -8,7 +8,7 @@ namespace UserReader.Services
 {
     public class UsersFileReader : IDataProvider
     {
-        public virtual String Name { get; set; }
+        public virtual string Name { get; set; }
 
         public virtual User AddUser(UserInfo userinfo)
         {
@@ -16,8 +16,9 @@ namespace UserReader.Services
             return new User();
         }
 
-        public List<UserInfo> FromFile()
+        public virtual List<UserInfo> FromFile()
         {
+            throw new NotImplementedException();
             return ReadUsers().Select(u => new UserInfo()
             {
                 Name = u.Name,
