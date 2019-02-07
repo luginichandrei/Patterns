@@ -20,13 +20,10 @@ namespace XUnitTest
             try
             {
                 userFileReader.FromFile();
-            } catch (NotImplementedException ex)
+            }
+            catch (NotImplementedException ex)
             {
                 Assert.NotNull(ex);
-            }
-            catch (Exception e)
-            {
-
             }
 
             Assert.True(userFileReader is IDataProvider);
@@ -74,7 +71,7 @@ namespace XUnitTest
             };
 
             var mockDateProvider = new Mock<IDataProvider>();
-            mockDateProvider.Setup(x=>x.FromFile()).Returns(usersInfo);
+            mockDateProvider.Setup(x => x.FromFile()).Returns(usersInfo);
             var users = new UserManager(mockDateProvider.Object, It.IsAny<string>()).GetAll();
 
             Assert.Equal(usersInfo, users);

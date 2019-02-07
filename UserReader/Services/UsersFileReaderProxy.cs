@@ -27,21 +27,9 @@ namespace UserReader.Services
 
         public override List<User> ReadUsers()
         {
-            int tryCount = 0;
-            while (tryCount < 3)
-            {
-                try
-                {
-                    var start_time = DateTime.Now.Millisecond;
-                    Console.WriteLine("UsersFileReaderProxy: Method name: Read Users, Elapsed time: 'time for execution {0} Millisecond'", DateTime.Now.Millisecond - start_time);
-                    return base.ReadUsers();
-                }
-                catch (Exception e)
-                {
-                    tryCount++;
-                }
-            }
-            return null;
+            var start_time = DateTime.Now.Millisecond;
+            Console.WriteLine("UsersFileReaderProxy: Method name: Read Users, Elapsed time: 'time for execution {0} Millisecond'", DateTime.Now.Millisecond - start_time);
+            return base.ReadUsers();
         }
     }
 }
